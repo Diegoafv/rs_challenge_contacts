@@ -37,6 +37,12 @@ def edit_contact(contacts):
     if change == "y":
       contacts[index-1]["email"] = input("Type the new email: ")
 
+    if contacts[index-1]["favorite"]:
+      change = input("\nRemove this contact from favorites? (y/n) ")
+      if change == "y":
+        contacts[index-1]["favorite"] = False
+
+
     print("\nThe contact was successfully updated!")
   else:
     print("Try adding a new contact before editing.")
